@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import DashBoard from './Components/dashboard';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
-  const [deckInfo, setDeckInfo] = useState(null)
-  const [cardInfo, setCardInfo] = useState(null)
-
+  const [deckInfo, setDeckInfo] = useState([])
+  const [cardInfo, setCardInfo] = useState([])
+  const [data, setData] = useState(null)
+  
   useEffect ( () => {
     const fetchPokemonData = async () => {
       const setOptions = "sets/swsh12pt5"
@@ -24,13 +26,18 @@ function App() {
       const cardSetJson = await cardSetResponse.json();
       const cardDataJson = await cardDataResponse.json();
       
-      console.log(cardSetJson);
+      
+      console.log(cardSetJson.data);
       console.log("last");
-      console.log(cardDataJson);
+      console.log(cardDataJson.data);
 
-
-      setDeckInfo(cardSetJson);
-      setCardInfo(cardDataJson);
+      //setDeckInfo(cardSetJson.data);
+      //setCardInfo(cardDataJso.data);
+        setData({
+          deck: cardSetJson.data,
+          cards: cardDataJson.data
+        })
+      
     };
 
 
@@ -44,6 +51,9 @@ function App() {
   return (
     <div className="App">
       <h1>Pokemon</h1>
+
+      {/*<DashBoard deck={deckInfo} cards={cardInfo}/>*/}
+      <DashBoard data={data}/>
     </div>
   )
 }
