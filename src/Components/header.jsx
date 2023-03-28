@@ -1,14 +1,13 @@
 import { useState } from 'react'
+import NavBar from "./navBar"
 
 
 const Header = () => {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-         <img className="Logo" alt="cresent moon logo" src='https://img.icons8.com/fluency/344/full-moon.png' />
-        <h1>AstroDash</h1>
-     
+    <div className='Header'>
+        <h1>Pokemon Card TCG Search</h1>
+        <NavBar/>     
     </div>
   )
 }
