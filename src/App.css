@@ -3,7 +3,7 @@
   font-weight:100; 
   font-style:normal;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(201, 61, 61);
   justify-content: center;
   display: flex;
   flex-direction: column;
