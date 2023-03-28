@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 
 const NavBar = () => {
-  const [count, setCount] = useState(0)
-
+ 
   return (
     <div>
-     
+        <ul>
+          <li>DashBoard</li>
+          <li>Search</li>
+          <li>About</li>
+        </ul>
     </div>
   )
 }
 
-export default NavBar
+export default NavBar;
