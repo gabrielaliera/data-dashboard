@@ -5,9 +5,13 @@ import DashBoard from './Components/dashboard';
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
-  const [deckInfo, setDeckInfo] = useState([])
-  const [cardInfo, setCardInfo] = useState([])
+  //const [deckInfo, setDeckInfo] = useState([])
+  //const [cardInfo, setCardInfo] = useState([])
   const [data, setData] = useState(null)
+  const data2 = {
+    deck: "",
+    card: ""
+  }
   
   useEffect ( () => {
     const fetchPokemonData = async () => {
@@ -33,16 +37,14 @@ function App() {
 
       //setDeckInfo(cardSetJson.data);
       //setCardInfo(cardDataJso.data);
-        setData({
-          deck: cardSetJson.data,
-          cards: cardDataJson.data
-        })
+      setData({
+        deck: cardSetJson.data,
+        cards: cardDataJson.data
+      });
       
     };
 
-
     fetchPokemonData().catch(console.error)
-
 
   },[])
   
@@ -51,10 +53,12 @@ function App() {
   return (
     <div className="App">
       <h1>Pokemon</h1>
-
-      {/*<DashBoard deck={deckInfo} cards={cardInfo}/>*/}
-      <DashBoard data={data}/>
-    </div>
+        {data ? 
+          (<DashBoard deck={data.deck} cards={data.cards}/>
+          ) : (
+            <div>Data no rendered</div>
+          )}
+        </div>
   )
 }
 
