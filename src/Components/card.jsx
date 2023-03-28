@@ -7,7 +7,7 @@ const Card = (props) => {
   return (
     <div className="Card">
       <h1>{props.name}</h1>
-      <br></br>
+      {props.image ? (<img src={props.image} alt={`${props.name} Logo`}/>) : <div></div>}
       <h2>{props.stat}</h2>
     </div>
   )
