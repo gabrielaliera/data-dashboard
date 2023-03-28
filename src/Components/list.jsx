@@ -9,33 +9,29 @@ const List = ({cards}) => {
     setTableData(cards);
   },[cards]);
 
-//<td>{item.tcgplayer.prices?.holofoil?.market}</td>
-  //                <td>{item.tcgplayer.prices?.reverseHolofoil?.market}</td>
-//  {'normal' in item.tcgplayer.prices ? <td>item.tcgplayer.prices.normal.market</td> : <td>"N/A"</td>}
-//<td>{item.types[0]}</td>  
 
 return (
-    <div>
+    <div className='List'>
     
       <div className='table'>
         <table>
           <thead>
             <tr>
-              <td>Image</td>
-              <td>Name</td>
-              <td>HP</td>
-              <td>Type</td>
-              <td>Rarity</td>
-              <td>Normal Market Price</td>
-              <td>Holo Market Price</td>
-              <td>ReverseHolo Foil Market Price</td>
+              <th>Image</th>
+              <th>Name</th>
+              <th>HP</th>
+              <th>Type</th>
+              <th>Rarity</th>
+              <th>Normal Market Price</th>
+              <th>Holo Market Price</th>
+              <th>ReverseHolo Foil Market Price</th>
             </tr>
           </thead>
           <tbody>
             {tableData ? 
               tableData.map((item,index) =>
                 <tr key={index}>
-                  <td><img src={item.images.small} alt={`Small icon for ${item.name}`}/></td>
+                  <td><img className="image" src={item.images.small} alt={`Small icon for ${item.name}`}/></td>
                   <td>{item.name}</td>
                   <td>{item.hp}</td>
                   <td>{item.types}</td>  
