@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import React from 'react';
+import './Card.css';
 
 
-const Card = () => {
-  const [count, setCount] = useState(0)
-
+const Card = (props) => {
+  
   return (
-    <div>
-     
+    <div className="Card">
+      <h1>{props.name}</h1>
+      <br></br>
+      <h2>{props.stat}</h2>
     </div>
   )
 }
