@@ -4,13 +4,14 @@ import { Component, useState } from 'react'
 import Card from './card'
 import List from './list'
 
-const DashBoard = ( {data}) => {
+const DashBoard = ({deck, cards}) => {
   
 
-  const deckData = data.deck;
-  const cardsData = data.cards;
-  console.log("deck")
-  console.log(deckData);
+ // const deckData = data.deck;
+ // const cardsData = data.cards;
+  //console.log("deck")
+  console.log(deck);
+  console.log(cards);
 
   /*
   <h2>Dashboard</h2>
@@ -29,15 +30,17 @@ const DashBoard = ( {data}) => {
       */
   return (
     <div>
+      
       <h2>DashBoard</h2>
       
       <div className="dashboard-row">
-        <img src={deckData.images.symbol}></img>
-        <Card name="Name" stat={deckData.name}/>
-        <Card name="Series"stat={deckData.series}/>
-        <Card name="Release Date" stat={deckData.releaseDate}/>
-        <Card name="Total Cards" stat={deckData.total}/>
+        <img src={deck.images.symbol}></img>
+        <Card name="Name" stat={deck.name}/>
+        <Card name="Series"stat={deck.series}/>
+        <Card name="Release Date" stat={deck.releaseDate}/>
+        <Card name="Total Cards" stat={deck.total}/>
       </div>
+      <List cards={cards}/>
     </div>
   )
 }
