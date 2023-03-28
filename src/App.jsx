@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import DashBoard from './Components/dashboard';
+import Header from './Components/header';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
@@ -52,11 +53,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokemon</h1>
-        {data ? 
+      <div className="App-sidebar">
+        <Header/>
+      </div>
+      
+      {data ? 
           (<DashBoard deck={data.deck} cards={data.cards}/>
           ) : (
-            <div>Data no rendered</div>
+            <div></div>
           )}
         </div>
   )
