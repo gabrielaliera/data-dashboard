@@ -41,3 +41,22 @@ table {
   align-items: center;
 }
   
+.filters {
+  margin-left: 150px;
+  padding-bottom: 20px;
+  padding-top:10px;
+  display: flex;
+}
+
+.dateFilter {
+  margin-right: 18px;
+}
+
+.hpfilter {
+  margin-right: 10px;
+}
+
+.btn {
+  color:white;
+  background-color: darkslateblue;
+}
