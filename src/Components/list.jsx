@@ -4,14 +4,42 @@ import './list.css'
 const List = ({cards}) => {
  
   const [tableData, setTableData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+
+  //filtered variables
+  const [name, setName] = useState('');
+  const [healthPoints, setHealthPoints] = useState(0);
+
 
   useEffect(() => {
     setTableData(cards);
-  },[cards]);
+    setFilterData(cards);
+  }, [cards]);
 
+  const handleSearch = () => {
+    const filterByDate = tableData.filter(item => 
+      item.name.toLowerCase().includes(name.toLowerCase()));
+    
+    const filterByHP = filterByDate.filter(item => parseFloat(item.hp) <= healthPoints ) 
+    setFilterData(filterByHP);
+    
+  }
 
 return (
     <div className='List'>
+
+      <div className='filters'>
+        <div className='dateFilter'>
+          <input type='text' placeholder="Find Pokemon" onChange={(e) => setName(e.target.value)}/>
+        </div>
+        <button className ='btn' onClick={() => handleSearch()}>Search</button>
+      </div>
+      <div className='hpFilter'>
+          <label >Max HP:</label>
+          <input type="range" name="hp" onChange={(e) => setHealthPoints(e.target.value)} min="0.0" max="300.0" step="1"></input>
+          {healthPoints}
+        </div>
+
     
       <div className='table'>
         <table>
@@ -28,8 +56,9 @@ return (
             </tr>
           </thead>
           <tbody>
-            {tableData ? 
-              tableData.map((item,index) =>
+            {
+              filterData && filterData.length > 0 ? 
+              filterData.map((item,index) =>
                 <tr key={index}>
                   <td><img className="image" src={item.images.small} alt={`Small icon for ${item.name}`}/></td>
                   <td>{item.name}</td>
@@ -44,7 +73,8 @@ return (
               ):         
             <tr>
               <td>No Pokemon data avaiable</td>
-            </tr>}
+            </tr>
+            }
           </tbody>
         </table>
       </div>
