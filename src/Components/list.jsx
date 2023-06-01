@@ -33,12 +33,14 @@ return (
           <input type='text' placeholder="Find Pokemon" onChange={(e) => setName(e.target.value)}/>
         </div>
         <button className ='btn' onClick={() => handleSearch()}>Search</button>
-      </div>
-      <div className='hpFilter'>
+
+        <div className='hpFilter'>
           <label >Max HP:</label>
           <input type="range" name="hp" onChange={(e) => setHealthPoints(e.target.value)} min="0.0" max="300.0" step="1"></input>
           {healthPoints}
         </div>
+      </div>
+     
 
     
       <div className='table'>
