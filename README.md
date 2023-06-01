@@ -16,18 +16,14 @@ The following **required** functionality is completed:
   - [x] *Image*
   - [x] *name*
   - [x] *Different market prices*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
-
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
+- [x] The user can enter specific bounds for filter values
 
 ## Video Walkthrough
 
