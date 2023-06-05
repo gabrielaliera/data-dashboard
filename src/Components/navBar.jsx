@@ -7,7 +7,6 @@ const NavBar = () => {
     <div>
         <ul>
           <li>DashBoard</li>
-          <li>Search</li>
           <li>About</li>
         </ul>
     </div>
