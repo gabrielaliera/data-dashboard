@@ -1,18 +1,16 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Route, Routes } from "react-router-dom";
 import './App.css'
 import DashBoard from './Components/dashboard';
 import Header from './Components/header';
+import DetailPage from './pages/DetailPage'
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
-  //const [deckInfo, setDeckInfo] = useState([])
-  //const [cardInfo, setCardInfo] = useState([])
-  const [data, setData] = useState(null)
-  const data2 = {
-    deck: "",
-    card: ""
-  }
+
+  const [data, setData] = useState({deck:null, cards:null})
+ 
   
   useEffect ( () => {
     const fetchPokemonData = async () => {
@@ -36,8 +34,6 @@ function App() {
       console.log("last");
       console.log(cardDataJson.data);
 
-      //setDeckInfo(cardSetJson.data);
-      //setCardInfo(cardDataJso.data);
       setData({
         deck: cardSetJson.data,
         cards: cardDataJson.data
@@ -49,7 +45,7 @@ function App() {
 
   },[])
   
-  
+
 
   return (
     <div className="App">
@@ -57,13 +53,17 @@ function App() {
         <Header/>
       </div>
       
-      {data ? 
-          (<DashBoard deck={data.deck} cards={data.cards}/>
+      {data.deck && data.cards ? (
+          <Routes>
+            <Route path="/" element={<DashBoard deck={data.deck} cards={data.cards}/>} />
+            <Route path="/:id" element={<DetailPage data={data}/>} />
+          </Routes> 
           ) : (
-            <div></div>
+            <div>Loading...</div>
           )}
-        </div>
+      
+    </div>
   )
 }
 
-export default App
+export default App;
