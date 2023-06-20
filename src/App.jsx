@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import './App.css'
 import DashBoard from './Components/dashboard';
 import Header from './Components/header';
+import About from './Pages/About'
 import DetailPage from './Pages/DetailPage'
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
@@ -62,6 +63,7 @@ function App() {
             element={<DashBoard deck={data.deck} cards={data.cards} />}
           />
           <Route path="/:id" element={<DetailPage data={data.cards} />} />
+          <Route path="/about" element={<About/>}/>
         </Routes>
       )}
       
