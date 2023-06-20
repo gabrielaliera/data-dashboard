@@ -56,6 +56,7 @@ return (
               <th>Normal Market Price</th>
               <th>Holo Market Price</th>
               <th>ReverseHolo Foil Market Price</th>
+              <th>More Details</th>
             </tr>
           </thead>
           <tbody>
@@ -71,7 +72,7 @@ return (
                   {'normal' in item.tcgplayer.prices ? (<td>{item.tcgplayer.prices.normal.market}</td>) : (<td>"N/A"</td>)}
                   {'holofoil' in item.tcgplayer.prices ? (<td>{item.tcgplayer.prices.holofoil.market}</td>) : (<td>"N/A"</td>)} 
                   {'reverseHolofoil' in item.tcgplayer.prices ? (<td>{item.tcgplayer.prices.reverseHolofoil.market}</td>) : (<td>"N/A"</td>)}
-                  <td><Link to={item.id}> &nbsp;&nbsp;&nbsp;&nbsp;🔗 </Link></td>           
+                  <td><Link to={item.id}>🔗</Link></td>           
                 </tr>
               
               ):         
