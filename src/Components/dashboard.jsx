@@ -15,7 +15,7 @@ const DashBoard = ({deck, cards}) => {
       <div className='deckImage'>
         <img src={deck.images.logo}/>
       </div>
-      <div className="dashboard-row">
+      <div className="dashboard-row"> 
         <Card name="Symbol" image={deck.images.symbol}/>
         <Card name="Series"stat={deck.series}/>
         <Card name="Release Date" stat={deck.releaseDate}/>
