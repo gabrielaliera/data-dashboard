@@ -18,34 +18,33 @@ The following **required** functionality is completed:
   - [x] *Different market prices*
 - [x] **A search bar allows the user to search for an item in the fetched data**
 - [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
-- [ ] **Clicking on an item in the list view displays more details about it**
-- [ ] **Clicking on an item has a direct, unique link to that item's detail view page**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
 The following **optional** features are implemented:
 
 - [x] Multiple filters can be applied simultaneously
 - [x] Filters use different input types such as a text input, a selection, or a slider
 - [x] The user can enter specific bounds for filter values
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img src='https://github.com/gabrielaliera/data-dashboard/blob/master/walkthrough.gif' title='Video Demo' width='300' heigth="500" alt='Video Demo' />
+GIF created with <a href="https://www.cockos.com/licecap/">LICEcap.</a> 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+During the course of this project, I encountered several challenges that tested my skills and problem-solving abilities. One significant hurdle I faced was the learning curve associated with React Router. Understanding how to effectively utilize React Router to manage routing within the application required dedicated effort and research.
 
+Another challenge arose when I needed to conditionally render specific data related to card information. Determining the appropriate logic and structure to display the desired information based on certain conditions was a complex task. It involved careful consideration of the data available and creating conditional rendering statements that accurately represented the desired outcome.
+
+Additionally, the project involved retrieving deck information, including details about crown zenith and individual card data. However, this required making two separate API calls. Overcoming this challenge involved finding a way to combine these calls into a single fetch request, optimizing efficiency and reducing unnecessary network requests.
+
+Lastly, implementing the search feature posed its own set of challenges. Developing a robust search functionality that effectively filtered and displayed relevant results required thoughtful consideration of the search algorithm, user experience, and handling various edge cases.
+
+Despite these challenges, I persevered and gained valuable insights and experience. Through active problem-solving and a commitment to continuous learning, I successfully navigated these obstacles and delivered a functional and robust solution.
 ## License
 
     Copyright [2023] [Gabriela Liera]
