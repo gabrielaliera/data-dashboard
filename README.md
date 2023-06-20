@@ -31,7 +31,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/gabrielaliera/data-dashboard/blob/master/walkthrough.gif' title='Video Demo' width='300' heigth="500" alt='Video Demo' />
+<img src='https://github.com/gabrielaliera/data-dashboard/blob/master/walkthrough.gif' title='Video Demo' width='1200' heigth="1200" alt='Video Demo' />
 GIF created with <a href="https://www.cockos.com/licecap/">LICEcap.</a> 
 
 ## Notes
