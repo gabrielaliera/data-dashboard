@@ -2,15 +2,22 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import PokemonDetails from '../Components/pokemonDetails'
 
+
 const DetailPage = ({data}) => {
 
-    const {pokemonID} = useParams();
-    const pokemon = data.cards.find(c => c.id === pokemonID);
+    let {id} = useParams();
 
+    const pokemon = data.find(item => item.id === id);
+    const pokemonData = pokemon ? [pokemon] : [];
+   
+    console.log("pokemon Details on detail page")
+    console.log(pokemon)
+    console.log(typeof pokemon === "object");
+     
     return (
         <div className="App-page">
             <div className="App-row">
-                <PokemonDetails data={pokemon}/>
+            <PokemonDetails data={pokemonData}/>
             </div>
         </div>  
     )
